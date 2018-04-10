@@ -1,28 +1,29 @@
-import React from 'react';
-import {Segment, Divider} from 'semantic-ui-react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components'
 
 
 const ChatMessage = ({message}) => (
-  <Wrapper>
-    <i>{message.email}</i>
-    <Divider hidden />
+  <Fragment>
+    <Name>{message.email}</Name>
     <Message>{message.body}</Message>
-  </Wrapper>
+  </Fragment>
 )
 
-const Wrapper = styled(Segment) `
-  padding-top: 10px;
-  position: relative;
-  border: 1px solid #ddd;
-  border-top: 0 none;
-`
-
 const Message = styled.blockquote`
-    border-radius: 20px 20px 20px 20px;
-    margin: 0 15px 10px;
-    padding: 15px 20px;
-    position: relative;
+    border-radius: 20px 20px 20px 20px !important;
+    margin: 0 15px 10px !important;
+    padding: 15px 20px !important;
+    position: relative !important;
+    background: #2095FE !important;
+    color: #fff !important;
+    width: 55px;
+    wight: 40px; 
+`
+const Name = styled.h6`
+  font-family: "Helvetica Neue" !important;
+	font-size: 15px !important;
+  font-weight: normal !important;
+  color: 'gray' !important;
 `
 
 export default ChatMessage;

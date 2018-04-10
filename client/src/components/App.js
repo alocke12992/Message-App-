@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import NoMatch from './NoMatch';
 import NavBar from './NavBar';
 import Login from './Login';
 import Register from './Register';
 import Flash from './Flash';
 import Home from './Home';
+import ChatWindow from './ChatWindow';
 import ProtectedRoute from './ProtectedRoute';
-import AuthRoute from './AuthRoute';
+import {Switch, Route} from 'react-router-dom';
 import FetchUser from './FetchUser';
-import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -19,8 +19,9 @@ class App extends Component {
         <FetchUser>
           <Switch>
             <Route exact path='/' component={Home} />
-            <AuthRoute exact path='/login' component={Login} />
-            <AuthRoute exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <ProtectedRoute exact path='/chat' component={ChatWindow} />
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
