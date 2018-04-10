@@ -1,8 +1,10 @@
+import { LOGIN, LOGOUT } from '../actions/auth';
+
 const user = (state = {}, action) => {
   switch (action.type) {
-    case 'LOGIN':
+    case LOGIN:
       return action.user;
-    case 'LOGOUT':
+    case LOGOUT:
       return {};
     default:
       return state;

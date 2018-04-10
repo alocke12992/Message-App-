@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
-import {Menu} from 'semantic-ui-react';
-import {Link, withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {handleLogout} from '../actions/auth';
+import React, { Component } from 'react';
+import { Menu } from 'semantic-ui-react';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { handleLogout } from '../actions/auth';
 
 class NavBar extends Component {
   rightNavs = () => {
-    const {user, dispatch, history} = this.props;
+    const { user, dispatch, history } = this.props;
 
     if (user.id) {
       return (
         <Menu.Menu position='right'>
-          <Link to='/chat'>
-            <Menu.Item name='Chat' />
+          <Link to="/chat">
+            <Menu.Item name="Chat" />
           </Link>
           <Menu.Item
             name='Logout'
@@ -40,7 +40,7 @@ class NavBar extends Component {
           <Link to='/'>
             <Menu.Item name='home' />
           </Link>
-          {this.rightNavs()}
+          { this.rightNavs() }
         </Menu>
       </div>
     );
@@ -48,7 +48,7 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = state => {
-  return {user: state.user};
+  return { user: state.user };
 };
 
 export default withRouter(connect(mapStateToProps)(NavBar));

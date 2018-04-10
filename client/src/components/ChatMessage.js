@@ -16,11 +16,9 @@ const Message = styled.blockquote`
     position: relative !important;
     background: #2095FE !important;
     color: #fff !important;
-    width: 55px;
-    wight: 40px; 
+    width: 100px !important;
 `
 const Name = styled.h6`
-  font-family: "Helvetica Neue" !important;
 	font-size: 15px !important;
   font-weight: normal !important;
   color: 'gray' !important;
